@@ -54,6 +54,24 @@
         text-align: center;
         margin: 20px 0;
     }
+    input[type="text"], input[type="submit"], a.button {
+        width: 80%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    input[type="submit"], a.button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+    input[type="submit"]:hover, a.button:hover {
+        background-color: #0056b3;
+    }
     .divider {
         font-size: 24px;
         color: #aaa;
@@ -62,13 +80,19 @@
 </style>
 <script>
 window.onload = function() {
-    const orderId = localStorage.getItem("orderId"); // Retrieve the order ID from localStorage
+    const orderId = localStorage.getItem("orderId");
     if (!orderId) {
         alert("No order ID found. Redirecting to start.");
-        window.location.href = "index.html"; // Redirect back if no order ID is found
+        window.location.href = "index.html";
     }
-    document.getElementById("orderIdDisplay").textContent = orderId; // Display the order ID
+    document.getElementById("orderIdDisplay").textContent = orderId;
 };
+function saveUsernameAndContinue() {
+    var username = document.getElementById("robloxUsername").value;
+    localStorage.setItem("robloxUsername", username); // Save the Roblox username to localStorage
+    window.location.href = "Robloxclaims2.html"; // Navigate to the next page
+    return false; // Prevent default form submission
+}
 </script>
 </head>
 <body>
@@ -88,7 +112,11 @@ window.onload = function() {
     </div>
     <div class="options">
         <p>Your Order ID: <span id="orderIdDisplay"></span></p>
-        <!-- Place additional interactive or informational elements here as needed for step 2 -->
+        <p>Provide your Roblox username:</p>
+        <form onsubmit="return saveUsernameAndContinue();">
+            <input type="text" id="robloxUsername" placeholder="Enter Roblox Username">
+            <input type="submit" value="Continue">
+        </form>
     </div>
 </div>
 </body>
