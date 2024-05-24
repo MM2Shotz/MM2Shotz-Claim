@@ -5,12 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MM2Shotz Claims - Step 2</title>
 <style>
-    /* Similar styles as the first page */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 70%;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .header {
+        text-align: center;
+        padding: 20px;
+    }
+    .steps {
+        text-align: center;
+        font-size: 16px;
+        color: #333;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .step-dot {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        border-radius: 50%;
+        background-color: #ccc;
+        color: white;
+        text-align: center;
+    }
+    .active-step {
+        background-color: #007bff;
+    }
+    .steps-line {
+        display: inline-block;
+        width: 20%;
+        height: 3px;
+        background-color: #ccc;
+        vertical-align: middle;
+    }
+    .options {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .divider {
+        font-size: 24px;
+        color: #aaa;
+        margin: 20px 0;
+    }
 </style>
 <script>
 window.onload = function() {
     const orderId = localStorage.getItem("orderId"); // Retrieve the order ID from localStorage
     if (!orderId) {
+        alert("No order ID found. Redirecting to start.");
         window.location.href = "index.html"; // Redirect back if no order ID is found
     }
     document.getElementById("orderIdDisplay").textContent = orderId; // Display the order ID
@@ -34,7 +88,7 @@ window.onload = function() {
     </div>
     <div class="options">
         <p>Your Order ID: <span id="orderIdDisplay"></span></p>
-        <!-- Additional form or information related to step 2 -->
+        <!-- Place additional interactive or informational elements here as needed for step 2 -->
     </div>
 </div>
 </body>
