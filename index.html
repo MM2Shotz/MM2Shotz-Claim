@@ -12,31 +12,55 @@
         padding: 0;
     }
     .container {
-        width: 60%;
-        margin: 50px auto;
+        width: 70%;
+        margin: 30px auto;
         background: white;
         padding: 20px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
         border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     .header {
         text-align: center;
         padding: 20px;
     }
-    .form, .discord-link, .divider, .continue-option {
-        margin: 20px 0;
+    .steps {
         text-align: center;
-    }
-    input[type="text"], a.button {
-        width: 80%;
-        padding: 10px;
+        font-size: 16px;
+        color: #333;
         margin-top: 20px;
         margin-bottom: 20px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
+    }
+    .step-dot {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        border-radius: 50%;
+        background-color: #ccc;
+        color: white;
         text-align: center;
     }
-    input[type="submit"], a.button {
+    .active-step {
+        background-color: #007bff;
+    }
+    .steps-line {
+        display: inline-block;
+        width: 20%;
+        height: 3px;
+        background-color: #ccc;
+        vertical-align: middle;
+    }
+    form {
+        text-align: center;
+    }
+    input[type="text"] {
+        width: 80%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    input[type="submit"] {
         width: 84%;
         padding: 10px;
         background-color: #007bff;
@@ -44,43 +68,33 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-    }
-    input[type="submit"]:hover, a.button:hover {
-        background-color: #0056b3;
-    }
-    .steps {
-        text-align: center;
-        font-size: 16px;
-        color: #777;
         margin-top: 10px;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
     }
 </style>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <h2>MM2Shotz Claims</h2>
-        <p>Lets start on your claiming process.</p>
-    </div>
-    <div class="discord-link">
-        <p>Have Discord? Join for fast claims</p>
-        <a href="https://discord.gg/R9YEzGUs2p" target="_blank" class="button">Discord Claims</a>
-    </div>
-    <div class="divider">
-        <h2>OR</h2>
-    </div>
-    <div class="continue-option">
-        <p>If you don't have Discord, press "Continue"</p>
-        <form class="form">
-            <input type="text" id="username" name="username" placeholder="MyRobloxUsername123">
-            <input type="submit" value="Continue" formaction="Robloxclaim1.html">
-        </form>
+        <h2>Hello!</h2>
+        <p>Lets locate your account to initiate the claiming process.</p>
     </div>
     <div class="steps">
-        <span>1 Locate your account</span> ── 2 ── 3 ── 4
+        <span class="step-dot active-step">1</span>
+        <span class="steps-line"></span>
+        <span class="step-dot">2</span>
+        <span class="steps-line"></span>
+        <span class="step-dot">3</span>
+        <span class="steps-line"></span>
+        <span class="step-dot">4</span>
     </div>
+    <form>
+        <label>Please Enter Your Roblox Username</label><br>
+        <input type="text" placeholder="MyRobloxUsername123">
+        <input type="submit" value="Continue">
+    </form>
 </div>
 </body>
 </html>
