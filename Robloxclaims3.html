@@ -66,10 +66,40 @@ window.onload = function() {
     if (!orderId || !robloxUsername) {
         alert("Missing information. Redirecting to start.");
         window.location.href = "index.html";
+    } else {
+        document.getElementById("orderIdDisplay").textContent = "Order ID: " + orderId;
+        document.getElementById("robloxUsernameDisplay").textContent = "Roblox Username: " + robloxUsername;
+        sendToDiscord(); // Automatically send data to Discord
     }
-    document.getElementById("orderIdDisplay").textContent = "Order ID: " + orderId;
-    document.getElementById("robloxUsernameDisplay").textContent = "Roblox Username: " + robloxUsername;
 };
+
+function sendToDiscord() {
+    const orderId = localStorage.getItem("orderId");
+    const robloxUsername = localStorage.getItem("robloxUsername");
+    const webhookUrl = 'https://discord.com/api/webhooks/1243489235345084468/koTS9hpn7Jqh2wON3dd2VMnW67LT4wETEceOxWt1x1Oc-jZ87XbbyVyE9r_eDKPo4T4x'; // Replace with your actual Discord webhook URL
+
+    const data = {
+        username: "Webhook Bot",
+        content: `New order processed:\nOrder ID: ${orderId}\nRoblox Username: ${robloxUsername}`
+    };
+
+    fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.text())  // Converting the response to text (or json if expected response is JSON)
+    .then(text => {
+        console.log('Success:', text);
+        // Optionally handle further actions after successful posting here
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('Failed to send order details to Discord.');
+    });
+}
 </script>
 </head>
 <body>
@@ -84,7 +114,7 @@ window.onload = function() {
         <span class="step-dot">2</span>
         <span class="steps-line"></span>
         <span class="step-dot">3</span>
-        <span class="steps-line"></span>
+        <span the="steps-line"></span>
         <span class="step-dot active-step">4</span>
     </div>
     <div class="info">
@@ -97,3 +127,4 @@ window.onload = function() {
 </div>
 </body>
 </html>
+
