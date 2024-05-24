@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MM2Shotz Claims - Step 3</title>
+<title>MM2Shotz Claims - Final Step</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -50,23 +50,13 @@
         background-color: #ccc;
         vertical-align: middle;
     }
-    .options, .friend-request {
+    .info, .delivery-message {
         text-align: center;
         margin: 20px 0;
     }
-    a.button, .button {
-        padding: 10px;
-        margin-top: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-    }
-    .button:hover {
-        background-color: #0056b3;
+    .delivery-message {
+        font-size: 18px;
+        color: #007bff;
     }
 </style>
 <script>
@@ -80,34 +70,29 @@ window.onload = function() {
     document.getElementById("orderIdDisplay").textContent = "Order ID: " + orderId;
     document.getElementById("robloxUsernameDisplay").textContent = "Roblox Username: " + robloxUsername;
 };
-function goToNextStep() {
-    window.location.href = "Robloxclaims3.html"; 
-}
 </script>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <h2>Step 3: Finalize Your Claim</h2>
-        <p>Please confirm the details and follow the instructions below.</p>
+        <h2>Final Step: Order Completion</h2>
+        <p>Your order has been successfully processed. Please review the details below.</p>
     </div>
     <div class="steps">
         <span class="step-dot">1</span>
         <span class="steps-line"></span>
         <span class="step-dot">2</span>
         <span class="steps-line"></span>
-        <span class="step-dot active-step">3</span>
+        <span class="step-dot">3</span>
         <span class="steps-line"></span>
-        <span class="step-dot">4</span>
+        <span class="step-dot active-step">4</span>
     </div>
-    <div class="options">
-        <p>Your Order ID: <span id="orderIdDisplay"></span></p>
-        <p>Your Roblox Username: <span id="robloxUsernameDisplay"></span></p>
+    <div class="info">
+        <p id="orderIdDisplay"></p>
+        <p id="robloxUsernameDisplay"></p>
     </div>
-    <div class="friend-request">
-        <p>Send a friend request to our account:</p>
-        <a href="https://www.roblox.com/users/6009227889/profile" target="_blank" class="button">Send Friend Request</a>
-        <button onclick="goToNextStep()" class="button">I sent a friend request</button>
+    <div class="delivery-message">
+        <p>Please give 24 hours for order delivery.</p>
     </div>
 </div>
 </body>
