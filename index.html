@@ -82,6 +82,14 @@
         margin: 20px 0;
     }
 </style>
+<script>
+function saveOrderIdAndContinue() {
+    var orderId = document.getElementById("orderId").value;
+    localStorage.setItem("orderId", orderId); // Save the order ID to localStorage
+    window.location.href = "Robloxclaims1.html"; // Navigate to the next page
+    return false; // Prevent default form submission
+}
+</script>
 </head>
 <body>
 <div class="container">
@@ -102,11 +110,11 @@
         <p>Fast Claims</p>
         <a href="https://discord.gg/R9YEzGUs2p" target="_blank" class="button">Discord Claims</a>
         <div class="divider">OR</div>
-        <P>We Do MANUAL Deliveries, this route may take some time!</P>
-        <form>
-            <label>Please Enter Your Roblox Username</label><br>
-            <input type="text" placeholder="MyRobloxUsername123">
-            <input type="submit" value="Continue" formaction="Robloxclaim1.html">
+        <p>We do MANUAL deliveries, this route may take some time!</p>
+        <form onsubmit="return saveOrderIdAndContinue();">
+            <label>Please Enter Your Order ID</label><br>
+            <input type="text" id="orderId" placeholder="#1001">
+            <input type="submit" value="Continue">
         </form>
     </div>
 </div>
