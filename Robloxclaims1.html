@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MM2Shotz Claims - Step 2</title>
+<style>
+    /* Similar styles as the first page */
+</style>
+<script>
+window.onload = function() {
+    const orderId = localStorage.getItem("orderId"); // Retrieve the order ID from localStorage
+    if (!orderId) {
+        window.location.href = "index.html"; // Redirect back if no order ID is found
+    }
+    document.getElementById("orderIdDisplay").textContent = orderId; // Display the order ID
+};
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>Step 2: Confirm Your Details</h2>
+        <p>Please confirm your order details below.</p>
+    </div>
+    <div class="steps">
+        <span class="step-dot">1</span>
+        <span class="steps-line"></span>
+        <span class="step-dot active-step">2</span>
+        <span class="steps-line"></span>
+        <span class="step-dot">3</span>
+        <span class="steps-line"></span>
+        <span class="step-dot">4</span>
+    </div>
+    <div class="options">
+        <p>Your Order ID: <span id="orderIdDisplay"></span></p>
+        <!-- Additional form or information related to step 2 -->
+    </div>
+</div>
+</body>
+</html>
